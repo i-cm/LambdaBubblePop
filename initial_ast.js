@@ -28,4 +28,22 @@ window.initialFunctionDefinitions = "map :: (a -> b) -> [a] -> [b]"            +
                                     "take :: Int -> [a] -> [a]"                + "\n" +
                                     "take 0 xs = []"                           + "\n" +
                                     "take n [] = []"                           + "\n" +
-                                    "take n (x:xs) = (x : (take (n - 1) xs))"  + "\n";
+                                    "take n (x:xs) = (x : (take (n - 1) xs))"  + "\n" +
+`
+if :: Int -> a -> b -> c
+if 0 a b = b
+if x a b = a
+
+times :: Int -> Int -> Int
+times x 0 = 0
+times x y = x + (times x (y - 1))
+
+exponent :: Int -> Int -> Int
+exponent x 0 -> 1
+exponent x y -> times x (exponent x (y - 1))
+
+minusifnotnegative :: Int -> Int -> Int
+minusifnotnegative 0 y -> 0
+minusifnotnegative x 0 -> x
+minusifnotnegative x y -> minusifnotnegative (x - 1) (y - 1)
+`;
